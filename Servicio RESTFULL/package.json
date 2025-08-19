@@ -1,0 +1,15 @@
+{
+  "name": "servicio-restfull",
+  "version": "1.0.0",
+  "description": "Servicio Restfull",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Jose",
+  "license": "JoseOH",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+
+}
