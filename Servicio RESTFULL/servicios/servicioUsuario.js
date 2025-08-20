@@ -50,3 +50,28 @@ exports.eliminarUsuario = asyncError(async (req, res, next) => {
     }
   });
 });
+
+exports.actualizarUsuario = asyncError(async (req, res, next) => {
+  const usuarioId = req.params.usuario;
+  const usuarioActualizado = req.body;
+
+  if (usuarioId !== 'usuario1') {
+    const error = new CustomError('No se encontró el usuario', 404);
+    return next(error);
+  }
+
+  const usuario = {
+    usuario: usuarioId,
+    contrasena: 'contrasena1',
+    idempleado: 1
+  };
+
+  const usuarioActualizadoFinal = Object.assign(usuario, usuarioActualizado);
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      usuario: usuarioActualizadoFinal
+    }
+  });
+});
