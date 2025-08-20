@@ -56,3 +56,32 @@ exports.eliminarEmpleado = asyncError(async (req, res, next) => {
     }
   });
 });
+
+
+exports.actualizarEmpleado = asyncError(async (req, res, next) => {
+  const empleadoId = req.params.idempleado;
+  const empleadoActualizado = req.body;
+
+  if (empleadoId !== 'EMP001') {
+    const error = new CustomeError('No se encontró el empleado', 404);
+    return next(error);
+  }
+
+  const empleado = {
+    idempleado: empleadoId,
+    nombre: 'Empleado 1',
+    apellido: 'Apellido 1',
+    email: 'empleado1@example.com',
+    rol: 'Rol 1',
+    telefono: '123456789'
+  };
+
+  const empleadoActualizadoFinal = empleado;
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      empleado: empleadoActualizadoFinal
+    }
+  });
+});
