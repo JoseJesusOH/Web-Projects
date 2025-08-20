@@ -28,3 +28,25 @@ exports.obtenerUsuarios = asyncError(async (req, res, next) => {
     }
   });
 });
+
+exports.eliminarUsuario = asyncError(async (req, res, next) => {
+  const usuarioId = req.params.usuario;
+
+  if (usuarioId !== 'usuario1') {
+    const error = new CustomError('No se encontró el usuario', 404);
+    return next(error);
+  }
+
+  const usuarioEliminado = {
+    usuario: usuarioId,
+    contrasena: 'contrasena1',
+    idempleado: 1
+  };
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      usuario: usuarioEliminado
+    }
+  });
+});
