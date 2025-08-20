@@ -97,3 +97,26 @@ exports.obtenerUsuarioPorId = asyncError(async (req, res, next) => {
     }
   });
 });
+
+exports.obtenerUsuario = asyncError(async (req, res, next) => {
+  const usuario = req.params.usuario;
+  const contrasena = req.params.contrasena;
+
+  if (usuario !== 'usuario1' || contrasena !== 'contrasena1') {
+    const error = new CustomError('Error al obtener el usuario', 400);
+    return next(error);
+  }
+
+  const usuarioEncontrado = {
+    usuario: usuario,
+    contrasena: contrasena,
+    idempleado: 1
+  };
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      usuario: usuarioEncontrado
+    }
+  });
+});
