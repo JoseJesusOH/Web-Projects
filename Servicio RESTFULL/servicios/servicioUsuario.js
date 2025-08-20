@@ -15,3 +15,16 @@ exports.agregarUsuario = asyncError(async (req, res, next) => {
     }
   });
 });
+
+exports.obtenerUsuarios = asyncError(async (req, res, next) => {
+  const usuarios = [
+    { usuario: 'usuario1', contrasena: 'contrasena1', idempleado: 1 },
+    { usuario: 'usuario2', contrasena: 'contrasena2', idempleado: 2 }
+  ];
+  res.status(200).json({
+    status: 'success',
+    data: {
+      usuarios: usuarios
+    }
+  });
+});
