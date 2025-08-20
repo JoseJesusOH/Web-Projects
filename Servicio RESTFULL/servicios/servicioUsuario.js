@@ -75,3 +75,25 @@ exports.actualizarUsuario = asyncError(async (req, res, next) => {
     }
   });
 });
+
+exports.obtenerUsuarioPorId = asyncError(async (req, res, next) => {
+  const usuarioId = req.params.id;
+
+  if (usuarioId !== '1') {
+    const error = new CustomError('Error al obtener el usuario', 400);
+    return next(error);
+  }
+
+  const usuario = {
+    usuario: 'usuario1',
+    contrasena: 'contrasena1',
+    idempleado: 1
+  };
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      usuario: usuario
+    }
+  });
+});
