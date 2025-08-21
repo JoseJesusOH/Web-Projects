@@ -13,6 +13,7 @@ router
 .route('/:id')
 .get(servicioReportes.obtenerReportePorId)
 .delete(servicioReportes.eliminarReporte)
+.put(servicioReportes.actualizarReporte)
 
 
 
