@@ -9,7 +9,9 @@ router
 .get(servicioReportes.obtenerReportes)
 .post(servicioReportes.agregarReporte)
 
-
+router
+.route('/:id')
+.get(servicioReportes.obtenerReportePorId)
 
 
 module.exports = router;
