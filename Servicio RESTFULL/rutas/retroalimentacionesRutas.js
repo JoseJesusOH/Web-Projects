@@ -12,7 +12,7 @@ router
 router
 .route('/:id')
 .get(servicioRetroalimentaciones.obtenerRetroalimentacionPorId)
-
+.delete(servicioRetroalimentaciones.eliminarRetroalimentacion)
 
 
 module.exports = router;
