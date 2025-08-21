@@ -11,3 +11,11 @@ const CustomeError = require("./utilidades/customeError");
 const errorController = require("./utilidades/errrorController")
 const app = express();
 app.use(express.json());
+
+
+app.use('/usuarios',usuariosRutas);
+app.use('/empleados',empleadosRutas);
+app.use('/clientes',clientesRutas);
+app.use('/mensajes',  mensajesRutas);
+app.use('/reportes', reportesRutas);
+app.use('/retroalimentaciones',  retroalimentacionesRutas);
