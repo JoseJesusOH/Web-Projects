@@ -7,6 +7,7 @@ const router = express.Router();
 router
 .route('/')
 .get(servicioRetroalimentaciones.obtenerRetroalimentaciones)
+.post(servicioRetroalimentaciones.agregarRetroalimentacion)
 
 
 
