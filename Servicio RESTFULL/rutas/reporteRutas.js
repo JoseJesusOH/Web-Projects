@@ -12,6 +12,8 @@ router
 router
 .route('/:id')
 .get(servicioReportes.obtenerReportePorId)
+.delete(servicioReportes.eliminarReporte)
+
 
 
 module.exports = router;
