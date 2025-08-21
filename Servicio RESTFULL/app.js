@@ -19,3 +19,17 @@ app.use('/clientes',clientesRutas);
 app.use('/mensajes',  mensajesRutas);
 app.use('/reportes', reportesRutas);
 app.use('/retroalimentaciones',  retroalimentacionesRutas);
+
+
+app.all("*", (req, res, next) => {
+  const err = new CustomeError("Cannot find " + req.originalUrl + "on the server", 404);
+  next(err);
+});
+
+app.use(errorController);
+
+app.listen(port, () => {
+  console.log(`Aplicación corriendo en el puerto ${port}`);
+});
+
+
