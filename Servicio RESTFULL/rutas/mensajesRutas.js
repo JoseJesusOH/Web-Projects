@@ -13,6 +13,8 @@ router
 .route('/:id')
 .get(servicioMensajes.obtenerMensajePorId)
 .delete(servicioMensajes.eliminarMensaje)
+.put(servicioMensajes.actualizarMensaje)
+
 
 
 module.exports = router;
