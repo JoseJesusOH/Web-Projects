@@ -7,6 +7,7 @@ const router = express.Router();
 router
 .route('/')
 .get(servicioReportes.obtenerReportes)
+.post(servicioReportes.agregarReporte)
 
 
 
