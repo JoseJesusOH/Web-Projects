@@ -79,3 +79,18 @@ exports.actualizarEmpleado = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.obtenerEmpleadoPorId = asyncError(async (req, res, next) => {
+  const result = await controlEmpleados.obtenerEmpleadoPorId(req.params.id);
+  if (typeof result === 'string') {
+    const error = new CustomeError('Error al obtener el empleado', 404);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        empleado: result
+      }
+    });
+  }
+});
