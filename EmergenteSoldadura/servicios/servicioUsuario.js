@@ -124,3 +124,53 @@ exports.actualizarUsuario = asyncError(async (req, res, next) => {
 
  
 });
+
+exports.obtenerUsuarioPorId = asyncError(async (req, res, next) => {
+  exports.obtenerUsuarios = asyncError(async (req, res, next) => {
+    const token = req.headers.authorization;
+    const secreto = 'osos-carinosos';
+  
+    try {
+      await jwtController.verifyToken(token, secreto);
+  
+      const result = await controlUsuarios.obtenerUsuarioPorId(req.params.id);
+  if (typeof result === 'string') {
+    const error = new CustomeError('Error al obtener el usuario', 400);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        usuario: result
+      }
+    });
+  }
+    } catch (error) {
+      const customeError = new CustomeError('Token inválido, no ha iniciado sesión.', 401);
+      next(customeError);
+    }
+  });
+
+
+});
+
+exports.obtenerUsuario = async (req, res, next) => {
+  const result = await controlUsuarios.obtenerUsuario(req.query.usuario, req.query.contrasena);
+  if (typeof result === 'string') {
+    const error = new CustomeError('Error al obtener el usuario', 400);
+    return next(error);
+  } else {
+    const { usuario, contrasena, idempleado } = result;
+    const payload = { usuario, contrasena, idempleado };
+    const secreto = 'osos-carinosos';
+    const token = await jwtController.generateToken(payload, secreto);
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        usuario: result,
+        token: token
+      }
+    });
+  }
+};
