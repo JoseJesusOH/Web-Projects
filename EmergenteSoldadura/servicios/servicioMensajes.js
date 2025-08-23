@@ -60,3 +60,23 @@ exports.eliminarMensaje = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.actualizarMensaje = asyncError(async (req, res, next) => {
+  const result = await controlMensajes.obtenerMensajePorId(req.params.id);
+  if (typeof result === 'string') {
+    const error = new CustomeError('Error al obtener el mensaje', 404);
+    return next(error);
+  }
+  const result2 = await controlMensajes.actualizarMensaje(req.body);
+  if (typeof result2 === 'string') {
+    const error = new CustomeError('Error al actualizar el mensaje', 400);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        mensaje: req.body
+      }
+    });
+  }
+});
