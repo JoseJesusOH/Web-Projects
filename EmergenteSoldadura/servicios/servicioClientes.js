@@ -16,3 +16,18 @@ exports.agregarCliente = asyncError(async (req, res, next) => {
         });
     }
 });
+
+exports.obtenerClientes = asyncError(async (req, res, next) => {
+    const result = await controlClientes.obtenerClientes();
+    if (typeof result === 'string') {
+        const error = new CustomeError('No se encontraron clientes', 404);
+        return next(error);
+    } else {
+        res.status(200).json({
+            status: 'success',
+            data: {
+                clientes: result
+            }
+        });
+    }
+});
