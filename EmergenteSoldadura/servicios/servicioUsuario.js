@@ -32,3 +32,29 @@ exports.agregarUsuario = asyncError(async (req, res, next) => {
     next(customeError);
   }
 });
+
+exports.obtenerUsuarios = asyncError(async (req, res, next) => {
+  const token = req.headers.authorization;
+  const secreto = 'osos-carinosos';
+
+  try {
+    await jwtController.verifyToken(token, secreto);
+
+    const result = await controlUsuarios.obtenerUsuarios();
+    if (typeof result === 'string') {
+      const error = new CustomeError('No se encontraron usuarios', 404);
+      return next(error);
+    } else {
+      res.status(200).json({
+        status: 'success',
+        data: {
+          usuarios: result
+        }
+      });
+    }
+  } catch (error) {
+    const customeError = new CustomeError('Token inválido, no ha iniciado sesión.', 401);
+    next(customeError);
+  }
+});
+
