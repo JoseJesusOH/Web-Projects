@@ -71,3 +71,18 @@ exports.actualizarCliente = asyncError(async (req, res, next) => {
         });
     }
 });
+
+exports.obtenerClientePorId = asyncError(async (req, res, next) => {
+    const result = await controlClientes.obtenerClientePorId(req.params.id);
+    if (typeof result === 'string') {
+        const error = new CustomeError('Error al obtener el cliente', 404);
+        return next(error);
+    } else {
+        res.status(200).json({
+            status: 'success',
+            data: {
+                cliente: result
+            }
+        });
+    }
+});
