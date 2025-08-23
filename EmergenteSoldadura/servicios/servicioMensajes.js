@@ -80,3 +80,18 @@ exports.actualizarMensaje = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.obtenerMensajePorId = asyncError(async (req, res, next) => {
+  const result = await controlMensajes.obtenerMensajePorId(req.params.id);
+  if (typeof result === 'string') {
+    const error = new CustomeError('Error al obtener el mensaje', 404);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        mensaje: result
+      }
+    });
+  }
+});
