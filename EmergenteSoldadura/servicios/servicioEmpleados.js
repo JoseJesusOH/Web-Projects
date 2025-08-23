@@ -39,3 +39,23 @@ exports.obtenerEmpleados = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.eliminarEmpleado = asyncError(async (req, res, next) => {
+  const result = await controlEmpleados.obtenerEmpleadoPorId(req.params.id);
+  if (typeof result === 'string') {
+    const error = new CustomeError('No se encontró el empleado', 404);
+    return next(error);
+  }
+  const result2 = await controlEmpleados.eliminarEmpleado(req.params.id);
+  if (typeof result2 === 'string') {
+    const error = new CustomeError('Error al eliminar el empleado', 400);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        empleado: result
+      }
+    });
+  }
+});
