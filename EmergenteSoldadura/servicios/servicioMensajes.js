@@ -25,3 +25,18 @@ exports.agregarMensaje = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.obtenerMensajes = asyncError(async (req, res, next) => {
+  const result = await controlMensajes.obtenerMensajes();
+  if (typeof result === 'string') {
+    const error = new CustomeError('No se encontraron mensajes', 404);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        mensajes: result
+      }
+    });
+  }
+});
