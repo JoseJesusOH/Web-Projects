@@ -88,3 +88,39 @@ exports.eliminarUsuario =  asyncError(async (req, res, next) => {
     next(customeError);
   }
 });
+
+exports.actualizarUsuario = asyncError(async (req, res, next) => {
+
+  const token = req.headers.authorization;
+  const secreto = 'osos-carinosos';
+
+  try {
+    await jwtController.verifyToken(token, secreto);
+
+    const result = await controlUsuarios.obtenerUsuarioPorId(req.params.usuario);
+  if (typeof result === 'string') {
+    const error = new CustomeError('Error al obtener el usuario', 404);
+    return next(error);
+  }
+  const result2 = await controlUsuarios.actualizarUsuario(req.body);
+  if (typeof result2 === 'string') {
+    const error = new CustomeError('Error al actualizar el usuario', 400);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        usuario: req.body
+      }
+    });
+  }
+  } catch (error) {
+    const customeError = new CustomeError('Token inválido, no ha iniciado sesión.', 401);
+    next(customeError);
+  }
+
+
+
+
+ 
+});
