@@ -40,3 +40,23 @@ exports.obtenerMensajes = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.eliminarMensaje = asyncError(async (req, res, next) => {
+  const result = await controlMensajes.obtenerMensajePorId(req.params.id);
+  if (typeof result === 'string') {
+    const error = new CustomeError('No se encontró el mensaje', 404);
+    return next(error);
+  }
+  const result2 = await controlMensajes.eliminarMensaje(req.params.id);
+  if (typeof result2 === 'string') {
+    const error = new CustomeError('Error al eliminar el mensaje', 400);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        mensaje: result
+      }
+    });
+  }
+});
