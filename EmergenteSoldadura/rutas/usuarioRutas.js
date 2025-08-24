@@ -8,6 +8,8 @@ router.route('/usuario')
 
 router.route('/')
   .get(servicioUsuarios.obtenerUsuarios)
+  .post(servicioUsuarios.agregarUsuario);
+
 
 
 module.exports = router;
