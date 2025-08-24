@@ -12,6 +12,7 @@ router.route('/')
 
 router.route('/:id')
   .get(servicioUsuarios.obtenerUsuarioPorId)
-
+  .delete(servicioUsuarios.eliminarUsuario)
+  .put(servicioUsuarios.actualizarUsuario);
 
 module.exports = router;
