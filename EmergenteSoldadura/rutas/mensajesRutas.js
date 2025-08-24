@@ -9,6 +9,12 @@ router
 .get(servicioMensajes.obtenerMensajes)
 .post(servicioMensajes.agregarMensaje)
 
+router
+.route('/:id')
+.get(servicioMensajes.obtenerMensajePorId)
+.delete(servicioMensajes.eliminarMensaje)
+.put(servicioMensajes.actualizarMensaje)
+
 
 
 module.exports = router;
