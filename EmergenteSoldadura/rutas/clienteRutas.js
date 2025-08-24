@@ -9,6 +9,12 @@ router
 .get(servicioClientes.obtenerClientes)
 .post(servicioClientes.agregarCliente)
 
+router
+.route('/:id')
+.get(servicioClientes.obtenerClientePorId)
+.delete(servicioClientes.eliminarCliente)
+.put(servicioClientes.actualizarCliente)
+
 
 
 module.exports = router;
