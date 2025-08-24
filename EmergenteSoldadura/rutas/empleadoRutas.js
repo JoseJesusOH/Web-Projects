@@ -9,6 +9,12 @@ router
 .get(servicioEmpleados.obtenerEmpleados)
 .post(servicioEmpleados.agregarEmpleado)
 
+router
+.route('/:id')
+.get(servicioEmpleados.obtenerEmpleadoPorId)
+.delete(servicioEmpleados.eliminarEmpleado)
+.put(servicioEmpleados.actualizarEmpleado)
+
 
 
 
