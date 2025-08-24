@@ -9,5 +9,12 @@ router
 .get(servicioRetroalimentaciones.obtenerRetroalimentaciones)
 .post(servicioRetroalimentaciones.agregarRetroalimentacion)
 
+router
+.route('/:id')
+.get(servicioRetroalimentaciones.obtenerRetroalimentacionPorId)
+.delete(servicioRetroalimentaciones.eliminarRetroalimentacion)
+.put(servicioRetroalimentaciones.actualizarRetroalimentacion)
+
+
 
 module.exports = router;
