@@ -10,6 +10,8 @@ router.route('/')
   .get(servicioUsuarios.obtenerUsuarios)
   .post(servicioUsuarios.agregarUsuario);
 
+router.route('/:id')
+  .get(servicioUsuarios.obtenerUsuarioPorId)
 
 
 module.exports = router;
