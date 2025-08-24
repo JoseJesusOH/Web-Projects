@@ -24,3 +24,18 @@ exports.agregarRetroalimentacion = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.obtenerRetroalimentaciones = asyncError(async (req, res, next) => {
+  const result = await controlRetroalimentaciones.obtenerRetroalimentaciones();
+  if (typeof result === 'string') {
+    const error = new CustomError('No se encontraron retroalimentaciones', 404);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        retroalimentaciones: result
+      }
+    });
+  }
+});
