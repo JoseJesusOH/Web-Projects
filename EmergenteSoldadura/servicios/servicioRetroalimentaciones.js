@@ -39,3 +39,23 @@ exports.obtenerRetroalimentaciones = asyncError(async (req, res, next) => {
     });
   }
 });
+
+exports.eliminarRetroalimentacion = asyncError(async (req, res, next) => {
+  const result = await controlRetroalimentaciones.obtenerRetroalimentacionPorId(req.params.id);
+  if (typeof result === 'string') {
+    const error = new CustomError('No se encontró la retroalimentación', 404);
+    return next(error);
+  }
+  const result2 = await controlRetroalimentaciones.eliminarRetroalimentacion(req.params.id);
+  if (typeof result2 === 'string') {
+    const error = new CustomError('Error al eliminar la retroalimentación', 400);
+    return next(error);
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        retroalimentacion: result
+      }
+    });
+  }
+});
