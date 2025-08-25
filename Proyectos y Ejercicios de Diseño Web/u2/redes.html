@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redes Sociales</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- <link rel="stylesheet" href="../css/redes.css" />-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      header,
+      section,
+      footer,
+      main,
+      aside,
+      nav,
+      article,
+      div {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: linear-gradient(45deg, #4caf50, #2196f3, #9c27b0, #ff5722);
+      }
+
+      .cabecera {
+        text-align: center;
+        padding: 1em;
+        background-color: #333;
+        color: white;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        margin: auto;
+      }
+
+      a.item {
+        width: 20%;
+        min-width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2em;
+      }
+/*
+      .item.facebook {
+        color: blue;
+                font-size: 4em;
+      }
+
+      .item.twitch {
+        color: purple;                font-size: 4em;
+
+      }
+
+      .item.reddit {
+        color: orangered;                font-size: 4em;
+
+      }
+
+      .item.whatsapp {
+        color: green;                font-size: 4em;
+
+      }
+
+      .item.youtube {
+        color: red;                font-size: 4em;
+
+      }
+*/
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em;
+        margin-top: auto;
+
+      }
+      @media only screen and (min-width: 600px) {
+        a.item{
+          color: black;
+          font-size: 6em;
+
+        }
+      }
+      @media only screen and (min-width: 780px) {
+        a.item{
+          color: greenyellow;
+          font-size: 8em;
+
+        }
+        .container{
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="cabecera">
+      <h1>Redes Sociales Iconos</h1>
+    </header>
+
+    <section class="social">
+      <div class="container">
+        <a href="" class="item facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+
+        <a href="" class="item twitch">
+          <i class="bi bi-twitch"></i>
+        </a>
+
+        <a href="" class="item reddit">
+          <i class="bi bi-reddit"></i>
+        </a>
+
+        <a href="" class="item whatsapp">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+
+        <a href="" class="item youtube">
+          <i class="bi bi-youtube"></i>
+        </a>
+      </div>
+    </section>
+    <footer>
+      <p>
+        Realizado por José Jesús Orozco Hernández 
+      </p>
+    </footer>
+  </body>
+</html>
