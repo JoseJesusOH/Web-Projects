@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios HTML</title>
+  </head>
+  <body>
+    <header class="cabecera"></header>
+    <section class="contenido">
+      <div>
+        <h1>Titulo del formulario</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo odit
+          delectus quo illum consequatur esse nesciunt eum architecto omnis,
+          distinctio magni, libero velit quibusdam soluta. Fugit at hic
+          voluptatibus dolorem.
+        </p>
+      </div>
+
+      <div>
+        <form action="#" method="post">
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Escribe tu nombre"
+          />
+          <br />
+          <input
+            type="text"
+            name="telefono"
+            id="telefono"
+            placeholder="Telefono 10 Digitos"
+          />
+          <br />
+          <input type="email" name="email" id="email" placeholder="E-Mail" />
+          <br />
+          <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+          <br />
+          <label for="">Elegir una opción: </label>
+          <input list="iocion" name="opcion" id="opcion" />
+          <datalist id="opciones" name="opciones">
+            <option value="Estudiante"></option>
+            <option value="Egresado"></option>
+            <option value="Empleado"></option>
+            <option value="Visitante"></option>
+          </datalist>
+          <br />
+          <input type="button" value="Enviar" />
+        </form>
+      </div>
+    </section>
+    <footer class="pie">
+      <p>Elaborado X Jose Jesus Orozco Hernandez </p>
+    </footer>
+  </body>
+</html>
