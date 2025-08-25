@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios HTML2</title>
+  </head>
+  <body>
+    <header>
+      <h1>Este es el lugar donde los clientes encuentran su funda ideal</h1>
+    </header>
+    <section>
+      <p>
+        <img
+          src="../img/img8.jpeg"
+          height="200"
+          width="500"
+          alt="Fundas 3 x 2"
+          align="right"
+        />
+        Atención querido internauta, si estás buscando una fundas para tu
+        celular y aún no has encontrado una que te guste, este es el lugar ideal
+        para ti. Desarrollamos fundas personalizadas de acuerdo a tus
+        personajes, estilos, etc.Simpre pensando en los mejores materiales y
+        desarollado por los mejores diseñadores, registra o envia tu formulario
+        para recibir un diseño preliminar. Los modelos para los que ofrecemos
+        fundas son:
+      </p>
+      <ol>
+        <li>Samsung</li>
+        <li>Motorola</li>
+        <li>Huawei</li>
+        <li>OPPO</li>
+      </ol>
+    </section>
+    <br />
+    <br />
+    <br />
+    <hr />
+
+    <section>
+      <img
+        src="../img/img9.jpeg"
+        height="550"
+        width="450"
+        alt="Fundas IPHONE"
+        align="left"
+      />
+      <img
+        src="../img/img10.jpeg"
+        height="550"
+        width="450"
+        alt="Fundas Motorola"
+        align="right"
+      />
+      <h2>Fundas Personalizadas Registro</h2>
+      <form action="#" method="post">
+        <label for="name">Nombre: </label>
+        <input type="text" name="name" id="name-id" />
+        <br />
+        <hr />
+        <label for="email">E-Mail: </label>
+        <input type="email" name="email" id="email-id" />
+        <br />
+        <hr />
+        <label for="color">Color Base: </label>
+        <input type="color" name="color" id="color-id" />
+        <br />
+        <hr />
+        <label for="imagen">Imagen: </label>
+        <input type="file" name="imagen" id="imagen-id" />
+        <br />
+        <hr />
+        <label for="opciones">Figuras Internas:</label>
+        <select id="opciones" name="opciones">
+          <option value="Ninguna">Ninguna</option>
+          <option value="Estrellas">Estrellas</option>
+          <option value="Mangos">Mangos</option>
+          <option value="Hojas">Hojas</option>
+          <option value="Hojas">Otra</option>
+        </select>
+        <br />
+        <hr />
+        <label for="comentarios">Comentarios Extra:</label>
+        <br />
+        <textarea
+          id="comentarios-id"
+          name="comentarios"
+          rows="5"
+          cols="33"
+        ></textarea>
+        <br />
+
+        <input type="button" onclick="enviar()" value="Enviar" />
+        <script>
+          function enviar() {
+            alert(
+              "Has dado click en enviar " +
+                document.getElementById("nombre").value
+            );
+          }
+        </script>
+      </form>
+    </section>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <footer>
+      <p>Elaborado por José Jesús, tu fiel servidor en Collab Fundas 2.0</p>
+    </footer>
+  </body>
+</html>
