@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.cabecera {
+    text-align: center;
+    min-height: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: blueviolet;
+    margin-bottom: 20px;
+}
+
+h1 {
+    width: 100%;
+    min-height: 1px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: brown;
+    color: antiquewhite;
+}
+
+table {
+    background-color: green;
+}
+
+.tablas {
+    margin: 20px auto 10px auto;
+}
+
+.tablas tr:nth-child(odd) {
+    background-color: blue;
+}
+
+.videos {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+}
+
+.videos a:hover {
+    color: blueviolet;
+}
+
+.videos h2 {
+    padding-top: 20px 0px;
+}
+.videos div{
+    width: 50%;
+}
+h2{
+    text-align: center;
+}

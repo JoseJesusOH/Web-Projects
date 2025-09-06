@@ -1,0 +1,88 @@
+h1,
+h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 2px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 2px;
+    padding-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+
+ol {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+footer p {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    background-color: aquamarine;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.articulo1 {
+    background-color: #f2f2f2;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.articulo1 ol {
+    text-align: justify;
+}
+
+.articulo1 header {
+    text-align: center;
+    background-color: aquamarine;
+    height: 50%;
+    padding: 20px 0px 10px 0px;
+}
+
+.imagen {
+    max-width: 100%;
+    float: right;
+    width: 200px;
+    padding: 5px;
+    padding: 5px;
+    height: auto;
+}
+
+.CONTENIDO {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.CONCLUSION {
+    grid-column: 1 / span 2;
+}
