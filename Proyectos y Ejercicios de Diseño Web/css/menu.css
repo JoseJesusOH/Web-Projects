@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.fondo-menu{
+    background-color: #e3f2fd;
+}
+.navbar-brand img{
+    width: 200px;
+}
