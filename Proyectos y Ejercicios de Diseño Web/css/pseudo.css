@@ -1,0 +1,88 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#productos {
+    width: 100%;
+    min-height: 1px;
+    background-color: rgb(184, 184, 226);
+    padding: 30px 0px;
+}
+
+.container {
+    width: 70%;
+    min-height: 1px;
+    display: flex;
+    margin: 0px auto 0px auto;
+
+}
+
+.items {
+    width: 33.33%;
+    min-height: 150px;
+    text-align: center;
+    background-image: url("../img/img22.jpeg");
+    background-repeat: no-repeat;
+}
+
+.items::after {
+    content: "Vendido";
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 120px;
+    transform: rotate(90deg);
+    text-transform: uppercase;
+    position: relative;
+    top: -55px;
+    left: 35px;
+
+}
+
+.contenido {
+    padding: 35px;
+}
+
+.contenido p {
+    line-height: 1.5;
+}
+
+.contenido p::first-letter {
+    font-size: 4.5em;
+    float: left;
+    margin-top: -30px;
+}
+
+.contenido p {
+    background-color: green;
+}
+
+/*
+Mas especifica
+*/
+section.contenido p {}
+
+
+p {
+    background-color: gray !important;
+}
+
+body section.contenido p {
+    background-color: blue;
+}
+
+section#productos>div.items {}
+
+body {
+    font-family: 'Opern Sans', sans-serif;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2em;
+    text-align: center;
+    line-height: 2;
+}
