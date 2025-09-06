@@ -1,0 +1,66 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header,
+section,
+footer,
+main,
+aside,
+nav,
+article,
+div {
+  box-sizing: border-box;
+}
+
+#galery {
+  width: 100%;
+  min-height: 1px;
+  padding-top: 80px;
+
+}
+
+.container {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  /* flex-wrap: wrap; */
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+  /* align-items: stretch; */
+  width: 70%;
+  min-height: 400px;
+  background: blue;
+  margin: auto;
+  padding: 15px;
+  color: whitesmoke;
+  font-size: 2em;
+
+}
+
+.items {
+  width: 15%;
+  height: 50px;
+  background: red;
+  border-radius: 15px;
+  align-self: center;
+}
+
+
+
+.self {
+  /*  align-self: flex-end;
+     align-self: center;
+     align-self: flex-start; 
+     align-self: stretch; 
+     align-self: baseline; 
+     align-self: inherit; 
+     align-self: initial; 
+     align-self: unset; */
+     align-self: flex-start; 
+}
+p {
+  text-align: center;
+  font-size: 30px;
+  color: aqua;
+}

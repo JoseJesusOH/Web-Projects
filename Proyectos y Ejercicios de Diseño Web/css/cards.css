@@ -1,0 +1,10 @@
+/*Documento CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.item{
+    background-color: #dcaf9f;
+}
