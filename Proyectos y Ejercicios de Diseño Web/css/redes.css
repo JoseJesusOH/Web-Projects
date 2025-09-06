@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+section,
+footer,
+main,
+aside,
+nav,
+article,
+div {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #4caf50, #2196f3, #9c27b0, #ff5722);
+}
+
+.cabecera {
+  text-align: center;
+  padding: 1em;
+  background-color: #333;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  margin: auto;
+}
+
+a.item {
+  width: 20%;
+  min-width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10em;
+  color: white;
+}
+
+.item.facebook {
+  color: blue;
+}
+
+.item.twitch {
+  color: purple;
+}
+
+.item.reddit {
+  color: orangered;
+}
+
+.item.whatsapp {
+  color: green;
+}
+
+.item.youtube {
+  color: red;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: auto;
+}
