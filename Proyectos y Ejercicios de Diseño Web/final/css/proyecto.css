@@ -1,0 +1,76 @@
+.titulo {
+    background-color: #946293;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header,
+section,
+footer,
+main,
+aside,
+nav,
+article,
+div {
+    box-sizing: border-box;
+}
+
+.inicio {
+    background-image: url("../img24/fondo_14.png");
+    background-size: cover;
+}
+
+.usagi {
+    background-color: #f8cd7b;
+}
+
+.sakura {
+    background-color: #f1d4e1;
+}
+
+.ofertas {
+    background-color: #e66f9b;
+}
+
+.boton-enviar {
+    background-color: #f1d4e1;
+}
+
+.derecho {
+    background-image: url("../img24/footer.png");
+    background-size: cover;
+}
+
+
+.sansita-swashed {
+    font-family: 'Sansita Swashed', cursive;
+    font-weight: 300;
+}
+
+
+.lalezar {
+    font-family: 'Lalezar', cursive;
+}
+
+.roboto-slab {
+    font-family: 'Roboto Slab', serif;
+}
+
+.barlow-semi-condensed {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.bowlby-one-sc {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.azul {
+    color: blue;
+}
+
+.rojo {
+    color: red;
+}
