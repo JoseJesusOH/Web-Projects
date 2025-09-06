@@ -1,0 +1,9 @@
+/*DOCUMENTO CSS*/
+#comida{
+    background-color: white;
+}
+
+.items1, .items2, .items3{
+    min-height: 160px;
+}
+

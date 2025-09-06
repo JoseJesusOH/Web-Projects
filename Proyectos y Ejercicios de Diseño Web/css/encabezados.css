@@ -1,0 +1,40 @@
+
+/* Selector Universal  */
+*{
+    margin: 0px;
+    font-size: 20px;
+}
+/*  Selector de Etiqueta  */
+h1{
+    color:red;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/*  agurpacion de selectores  */
+h2,h4{
+    color:greenyellow;
+}
+h3,h5{
+    color:violet;
+}
+
+/*
+body{
+    background-color: aqua;
+    color: red;
+}
+p{
+    color: red;
+}
+*/
+
+/*  Selector de clase    */
+.atencion {
+    color: coral;
+}
+.izq{
+    float: left;
+    width: 200px;
+    height: auto;
+}
